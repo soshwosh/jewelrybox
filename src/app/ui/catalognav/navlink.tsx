@@ -43,7 +43,7 @@ export default function NavLinks() {
                     <Link 
                      key={link.name} 
                      href={link.href}
-                     className={pathname === link.href ? "bg-pink-300" : "bg-pink-500"}
+                     className={`p-2 rounded-md text-white hover:bg-pink-600 ${pathname === link.href ? "bg-pink-700" : "bg-pink-500"}`}
                     >
                         {link.name}
                     </Link>
