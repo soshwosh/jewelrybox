@@ -14,7 +14,7 @@ const CatalogGallery: FC<Props> = (
             {
                 jewelryList.map((jewelryItem) => {
                     return (
-                        <CatalogCard jewelry={jewelryItem}></CatalogCard>
+                        <CatalogCard key={jewelryItem.id} jewelry={jewelryItem}></CatalogCard>
                     );
                 })
             }
