@@ -1,11 +1,11 @@
 "use client";
 import NavBar from "../ui/catalognav/navbar";
 import Header from "../ui/catalogheader/header";
-import { usePathname } from "next/navigation";
+import usePagename from "../../hooks/usePagename";
 
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const pathName = usePathname();
+  const pageName = usePagename();
 
   return (
     <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
@@ -13,7 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <NavBar />
       </div>
       <div className="flex flex-col w-full">
-        <Header pageTitle={pathName} />
+        <Header pageTitle={pageName} />
         <div className="flex-grow p-6 md:overflow-y-auto md:p-12">
           {children}
         </div>
