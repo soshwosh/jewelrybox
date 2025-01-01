@@ -9,13 +9,13 @@ export default function Home() {
           className="w-auto bg-pink-700 px-3 py-1 rounded-md text-white text-xl m-2 hover:bg-pink-200 hover:text-black"
           type="submit"
         >
-          <Link href="/catalog/alljewelry">Log In</Link>
+          <Link href="/alljewelry">Log In</Link>
         </button>
         <button
           className="bg-pink-700 px-3 py-1 rounded-md text-white text-xl m-2 hover:bg-pink-200 hover:text-black"
           type="submit"
         >
-          <Link href="/catalog/alljewelry">Sign Up</Link>
+          <Link href="/alljewelry">Sign Up</Link>
         </button>
       </div>
     </div>

@@ -6,7 +6,8 @@ export async function fetchAllJewelryItems() {
     const data = await sql<SelectJewelryItem>`
         SELECT * 
         FROM jewelry_items
-        ORDER BY jewelry_items.id`;
+        ORDER BY jewelry_items.id
+        LIMIT 100`;
 
     return data.rows;
   } catch (e) {
