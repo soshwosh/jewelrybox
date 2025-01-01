@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { JewelryItemType } from "@/app/types/jewelryItemType";
-import Image from "next/image";
 
 interface Props {
   jewelry: JewelryItemType;
