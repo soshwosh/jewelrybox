@@ -2,36 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { LinkType } from "@/app/types/linkType";
+import { FC } from "react";
 
-// TODO: Store in database and fetch
-const links = [
-  {
-    name: "Home",
-    href: "/",
-  },
-  {
-    name: "All Jewelry",
-    href: "/catalog/alljewelry",
-  },
-  {
-    name: "Bracelets",
-    href: "/catalog/bracelets",
-  },
-  {
-    name: "Earrings",
-    href: "/catalog/earrings",
-  },
-  {
-    name: "Necklaces",
-    href: "/catalog/necklaces",
-  },
-  {
-    name: "Rings",
-    href: "/catalog/rings",
-  },
-];
 
-export default function NavLinks() {
+interface Props {
+  links: LinkType[];
+}
+
+const NavLinks: FC<Props> = ({links}) => {
     const pathname = usePathname();
 
     return (
@@ -53,3 +32,5 @@ export default function NavLinks() {
         </>
     );
 }
+
+export default NavLinks;
