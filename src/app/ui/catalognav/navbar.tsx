@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import NavLinks from "./navlink";
 
 export default function NavBar() {
