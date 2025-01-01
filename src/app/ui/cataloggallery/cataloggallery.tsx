@@ -10,7 +10,7 @@ const CatalogGallery: FC<Props> = (
     {jewelryList}
 ) => {
     return (
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap gap-4">
             {
                 jewelryList.map((jewelryItem) => {
                     return (
