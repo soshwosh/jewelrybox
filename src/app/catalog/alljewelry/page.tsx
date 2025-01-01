@@ -1,9 +1,9 @@
 import CatalogGallery from "@/app/ui/cataloggallery/cataloggallery";
-import { fetchAllJewelryItems } from "@/app/lib/dbutils";
+import { fetchAllJewelryItems } from "@/lib/dbutils";
 
 export default async function Page() {
   const jewelryData = await fetchAllJewelryItems();
-  
+
   // const dummyData = [
   //   {
   //     id: 1,
@@ -30,6 +30,6 @@ export default async function Page() {
   //       "https://i.pinimg.com/236x/61/48/4b/61484bf69a752c0c5098e91bc2f006d6.jpg",
   //   },
   // ];
-  
+
   return <CatalogGallery jewelryList={jewelryData} />;
 }

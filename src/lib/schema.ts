@@ -6,7 +6,6 @@ import {
   integer,
   text,
 } from "drizzle-orm/pg-core";
-import { sql } from "drizzle-orm";
 
 export const users = pgTable("users", {
   id: serial().primaryKey().notNull(),
@@ -25,7 +24,7 @@ export const jewelryItems = pgTable(
     color: varchar({ length: 10 }),
     brand: varchar({ length: 30 }),
     notes: text(),
-    imageUrl: text("image_url"),
+    imageUrl: text("imageUrl"),
   },
   (table) => [
     foreignKey({
