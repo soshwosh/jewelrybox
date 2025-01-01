@@ -1,11 +1,40 @@
+import NavLinks from "./navlinks";
 
-import NavLinks from "./navlink";
+// TODO: Store in database and fetch
+
+const links = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "All Jewelry",
+    href: "/catalog/alljewelry",
+  },
+  {
+    name: "Bracelets",
+    href: "/catalog/bracelets",
+  },
+  {
+    name: "Earrings",
+    href: "/catalog/earrings",
+  },
+  {
+    name: "Necklaces",
+    href: "/catalog/necklaces",
+  },
+  {
+    name: "Rings",
+    href: "/catalog/rings",
+  },
+];
 
 export default function NavBar() {
   return (
-    <div className="flex h-full flex-col p-3 m-1 bg-pink-500">
-      <NavLinks/>
+    <div className="flex h-full flex-col p-3 bg-pink-500">
+      <NavLinks links={links}/>
     
     </div>
   );
 }
+
