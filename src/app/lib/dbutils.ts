@@ -3,7 +3,7 @@ import { SelectJewelryItem } from '../types/drizzleTypes'
 
 export async function fetchAllJewelryItems() {
     try {
-        const data = await sql<SelectJewelryItem>`SELECT * FROM revenue`;
+        const data = await sql<SelectJewelryItem>`SELECT * FROM jewelry_items`;
         return data.rows;
     }
     catch(e) {

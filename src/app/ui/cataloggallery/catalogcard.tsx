@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { JewelryItemType } from "@/app/types/jewelryItemType";
+import { SelectJewelryItem } from "@/app/types/drizzleTypes";
 
 interface Props {
-  jewelry: JewelryItemType;
+  jewelry: SelectJewelryItem;
   // add some state handlers like changeNameText, changeTypeText, etc
 }
 
@@ -13,8 +13,8 @@ const CatalogCard: FC<Props> = ({ jewelry }) => {
       <div className="relative w-full h-48">
         <img
           className="w-full h-full absolute inset-0 object-cover"
-          src={jewelry.imageUrl}
-          alt=""
+          src={jewelry.imageUrl ? jewelry.imageUrl : undefined}
+          alt="picture of jewelry"
         />
       </div>
       <div className="px-6 py-4">

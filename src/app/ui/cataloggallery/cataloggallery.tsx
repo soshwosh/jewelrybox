@@ -1,9 +1,9 @@
-import { JewelryItemType } from "@/app/types/jewelryItemType";
+import { SelectJewelryItem } from "@/app/types/drizzleTypes";
 import {FC} from "react";
 import CatalogCard from "./catalogcard";
 
 interface Props {
-    jewelryList: JewelryItemType[],
+  jewelryList: SelectJewelryItem[];
 }
 
 const CatalogGallery: FC<Props> = (
