@@ -7,7 +7,7 @@ interface Props {
 }
 
 const CatalogCard: FC<Props> = ({ jewelry }) => {
-  console.log(jewelry.name, jewelry.imageUrl);
+  // console.log(jewelry.name, jewelry.imageUrl);
   return (
     // From https://v1.tailwindcss.com/components/cards#stacked
     <div className="max-w-sm rounded overflow-hidden shadow-lg hover:-translate-y-2 hover:duration-300">
