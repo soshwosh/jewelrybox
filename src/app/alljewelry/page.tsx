@@ -31,5 +31,9 @@ export default async function Page() {
   //   },
   // ];
 
-  return <CatalogGallery jewelryList={jewelryData} />;
+  return (
+    <div>
+      <CatalogGallery jewelryList={jewelryData} />
+    </div>
+  );
 }

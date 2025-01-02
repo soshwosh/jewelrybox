@@ -1,9 +1,8 @@
-import { db } from "@vercel/postgres"
+import { sql } from "@vercel/postgres"
 
-const client = await db.connect()
 
 async function listUsers() {
-    const data = await client.sql`
+    const data = await sql`
         SELECT *
         FROM users;
     `;
@@ -20,5 +19,4 @@ export async function GET() {
     {
         return Response.json({error}, {status: 500});
     }
-
 }

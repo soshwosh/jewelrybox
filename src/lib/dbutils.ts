@@ -6,7 +6,8 @@ export async function fetchAllJewelryItems() {
     const data = await sql<SelectJewelryItem>`
         SELECT * 
         FROM jewelry_items
-        ORDER BY jewelry_items.id`;
+        ORDER BY jewelry_items.id
+        LIMIT 100`;
 
     return data.rows;
   } catch (e) {
@@ -74,3 +75,25 @@ export async function fetchRingData() {
     throw new Error("Failed to fetch bracelet data.");
   }
 }
+
+// export async function addJewelryItem(
+//   name: string,
+//   brand: string,
+//   type: string,
+//   material: string,
+//   color: string,
+//   notes: string,
+//   imageUrl: string
+// ) {
+//   try {
+//     const data = await sql<SelectJewelryItem>`
+//         INSERT INTO jewelry_items (name, brand, type, material, color, notes, imageUrl)
+//         VALUES (${name}, ${brand}, ${type}, ${material}, ${color}, ${notes}, ${imageUrl})
+//         RETURNING *`;
+
+//     return data.rows;
+//   } catch (e) {
+//     console.error("Database Error: ", e);
+//     throw new Error("Failed to add jewelry item.");
+//   }
+// }

@@ -9,32 +9,34 @@ const links = [
   },
   {
     name: "All Jewelry",
-    href: "/catalog/alljewelry",
+    href: "/alljewelry",
   },
   {
     name: "Bracelets",
-    href: "/catalog/bracelets",
+    href: "/alljewelry/bracelets",
   },
   {
     name: "Earrings",
-    href: "/catalog/earrings",
+    href: "/alljewelry/earrings",
   },
   {
     name: "Necklaces",
-    href: "/catalog/necklaces",
+    href: "/alljewelry/necklaces",
   },
   {
     name: "Rings",
-    href: "/catalog/rings",
+    href: "/alljewelry/rings",
+  },
+  {
+    name: "Add New Jewelry",
+    href: "/alljewelry/addJewelry",
   },
 ];
 
 export default function NavBar() {
   return (
     <div className="flex h-full flex-col p-3 bg-pink-500">
-      <NavLinks links={links}/>
-    
+      <NavLinks links={links} />
     </div>
   );
 }
-
