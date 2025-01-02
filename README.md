@@ -1,20 +1,20 @@
 This is JewelryBox, a full stack personal jewelry catalog with organizational abilities.
 
 ## Major Features / MVP
-[] Add jewelry items
+
+- [ ] Add jewelry items
 - Input details such as name, brand, material, notes, etc
 - Optionally upload an image of the item
-[x] View jewelry items
+- [x] View jewelry items
 - Display all jewelry in a visually appealing gallery
-[] Search jewelry items
+- [ ] Search jewelry items
 - Search catalog by type, material, or tags
-[] Edit jewelry items
+- [ ] Edit jewelry items
 - Modify details about jewelry in case of error when adding, or change to the state of the jewelry
-[] Delete jewelry items
+- [ ] Delete jewelry items
 - Remove an item from the catalog
-[] Pair jewelry items
+- [ ] Pair jewelry items
 - Pair up jewelry items for occasions or outfits
-
 
 ## Tech Stack
 - Frontend: React & TailwindCSS
