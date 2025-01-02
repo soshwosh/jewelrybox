@@ -55,8 +55,8 @@ const CatalogGallery: FC<Props> = ({ jewelryList }) => {
   };
 
   return (
-    <div>
-      <div className="flex flex-col items-center justify-center mb-3 ">
+    <div className="w-full">
+      <div className="flex flex-col justify-center items-center mb-3">
         <SearchBar />
         <AddJewelryForm createJewelryItem={createJewelryItem} />
       </div>

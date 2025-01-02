@@ -56,51 +56,65 @@ const AddJewelryForm: FC<Props> = ({ createJewelryItem }) => {
   };
 
   return (
-    <div className="flex flex-col w-1/2">
-      <FormInput
-        inputName="itemName"
-        itemTitle="Item Name"
-        placeholder="Bean Bracelet"
-        onChange={handleItemNameInput}
-      ></FormInput>
-      <FormInput
-        inputName="brand"
-        itemTitle="Brand"
-        placeholder="Tiffany & Co"
-        onChange={handleBrandInput}
-      ></FormInput>
-      <FormInput
-        inputName="type"
-        itemTitle="Jewelry Type"
-        placeholder="bracelet"
-        onChange={handleTypeInput}
-      ></FormInput>
-      <FormInput
-        inputName="material"
-        itemTitle="Material"
-        placeholder="gold"
-        onChange={handleMaterialInput}
-      ></FormInput>
-      <FormInput
-        inputName="color"
-        itemTitle="Color"
-        placeholder="yellow"
-        onChange={handleColorInput}
-      ></FormInput>
-      <FormInput
-        inputName="notes"
-        itemTitle="Notes"
-        placeholder="grad present from grandma"
-        onChange={handleNotesInput}
-      ></FormInput>
-      <FormInput
-        inputName="image"
-        itemTitle="Image URL"
-        placeholder="https://media.tiffany.com/is/image/Tiffany/EcomItemL2/elsa-perettibean-design-bracelet-34900965_1041295_AV_2.jpg?&op_usm=1.0,1.0,6.0&defaultImage=NoImageAvailableInternal&&defaultImage=NoImageAvailableInternal&fmt=webp"
-        onChange={handleImageInput}
-      ></FormInput>
+    <div className="flex flex-col w-2/3  bg-slate-100 pt-5 pb-2 rounded-lg">
+      <h2 className="text-2xl text-pink-500 text-center">Add a New Jewelry Item</h2>
+      <div className="flex flex-row justify-center">
+        <div className="m-2">
+          <FormInput
+            inputName="itemName"
+            itemTitle="Item Name"
+            placeholder="Bean Bracelet"
+            onChange={handleItemNameInput}
+          ></FormInput>
+          <FormInput
+            inputName="brand"
+            itemTitle="Brand"
+            placeholder="Tiffany & Co"
+            onChange={handleBrandInput}
+          ></FormInput>
+        </div>
 
-      <div className="flex flex-row justify-between w-1/2">
+        <div className="m-2">
+          <FormInput
+            inputName="type"
+            itemTitle="Jewelry Type"
+            placeholder="bracelet"
+            onChange={handleTypeInput}
+          ></FormInput>
+          <FormInput
+            inputName="material"
+            itemTitle="Material"
+            placeholder="gold"
+            onChange={handleMaterialInput}
+          ></FormInput>
+        </div>
+
+        <div className="m-2">
+          <FormInput
+            inputName="color"
+            itemTitle="Color"
+            placeholder="yellow"
+            onChange={handleColorInput}
+          ></FormInput>
+          <FormInput
+            inputName="notes"
+            itemTitle="Notes"
+            placeholder="grad present from grandma"
+            onChange={handleNotesInput}
+          ></FormInput>
+        </div>
+
+        <div className="m-2">
+          <FormInput
+            inputName="image"
+            itemTitle="Image URL"
+            placeholder="https://media.tiffany.com/is/image/Tiffany/EcomItemL2/elsa-perettibean-design-bracelet-34900965_1041295_AV_2.jpg?&op_usm=1.0,1.0,6.0&defaultImage=NoImageAvailableInternal&&defaultImage=NoImageAvailableInternal&fmt=webp"
+            onChange={handleImageInput}
+          ></FormInput>
+        </div>
+      </div>
+
+      <div className="flex flex-row justify-around">
         <button className="w-auto bg-pink-500 px-3 py-1 rounded-md text-white text-xl m-2 hover:scale-105 hover:bg-pink-700 hover:duration-300">
           <Link href="/alljewelry">Cancel</Link>
         </button>

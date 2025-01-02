@@ -25,7 +25,7 @@ const FormInput: FC<Props> = ({
         name={inputName}
         id=""
         placeholder={placeholder}
-        className="bg-slate-200 w-1/2 px-2 py-1 rounded-md outline-pink-500"
+        className="bg-slate-200 px-2 py-1 rounded-md outline-pink-500"
       />
     </div>
   );
