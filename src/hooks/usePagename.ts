@@ -15,6 +15,8 @@ const usePagename = () => {
     return "Necklaces";
   } else if (pathname === "/alljewelry/rings") {
     return "Rings";
+  } else if (pathname === "/alljewelry/addJewelry") {
+    return "Add Jewelry";
   } else {
     return "";
   }
