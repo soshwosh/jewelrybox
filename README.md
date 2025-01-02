@@ -2,10 +2,10 @@ This is JewelryBox, a full stack personal jewelry catalog with organizational ab
 
 ## Tech Stack:
 
-Frontend: React & TailwindCSS
-Backend: NextJS & NodeJS
-Database: Postgres (NeonDB, Drizzle ORM)
-Deployment: Vercel
+- Frontend: React & TailwindCSS
+- Backend: NextJS & NodeJS
+- Database: Postgres (NeonDB, Drizzle ORM)
+- Deployment: Vercel
 
 When you click login or signup, it's takes a few seconds to load.
 I think this is because my initial database fetches are slow and I haven't implemented any streaming (yet).
