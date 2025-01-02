@@ -1,0 +1,1 @@
+ALTER TABLE "jewelry_items" ALTER COLUMN "userid" SET NOT NULL;

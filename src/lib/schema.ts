@@ -17,7 +17,7 @@ export const jewelryItems = pgTable(
   "jewelry_items",
   {
     id: serial().primaryKey().notNull(),
-    userid: integer(),
+    userid: integer().notNull(),
     name: varchar({ length: 30 }).default(""),
     type: varchar({ length: 10 }).default("earrings"),
     material: varchar({ length: 30 }).default(""),

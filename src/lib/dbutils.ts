@@ -1,10 +1,10 @@
 import { sql } from "@vercel/postgres";
-import { SelectJewelryItem } from "../app/types/drizzleTypes";
+import { JewelryItemType } from "../app/types/jewelryItemType";
 // import "../../drizzle/envConfig";
 
 export async function fetchAllJewelryItems() {
   try {
-    const data = await sql<SelectJewelryItem>`
+    const data = await sql<JewelryItemType>`
         SELECT * 
         FROM jewelry_items
         ORDER BY jewelry_items.id
@@ -19,7 +19,7 @@ export async function fetchAllJewelryItems() {
 
 export async function fetchBraceletData() {
   try {
-    const data = await sql<SelectJewelryItem>`
+    const data = await sql<JewelryItemType>`
         SELECT * 
         FROM jewelry_items
         WHERE jewelry_items.type = 'bracelet'
@@ -34,7 +34,7 @@ export async function fetchBraceletData() {
 
 export async function fetchEarringData() {
   try {
-    const data = await sql<SelectJewelryItem>`
+    const data = await sql<JewelryItemType>`
         SELECT * 
         FROM jewelry_items
         WHERE jewelry_items.type = 'earrings'
@@ -49,7 +49,7 @@ export async function fetchEarringData() {
 
 export async function fetchNecklaceData() {
   try {
-    const data = await sql<SelectJewelryItem>`
+    const data = await sql<JewelryItemType>`
         SELECT * 
         FROM jewelry_items
         WHERE jewelry_items.type = 'necklace'
@@ -64,7 +64,7 @@ export async function fetchNecklaceData() {
 
 export async function fetchRingData() {
   try {
-    const data = await sql<SelectJewelryItem>`
+    const data = await sql<JewelryItemType>`
         SELECT * 
         FROM jewelry_items
         WHERE jewelry_items.type = 'ring'

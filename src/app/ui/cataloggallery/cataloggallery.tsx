@@ -1,5 +1,5 @@
 "use client";
-import { SelectJewelryItem } from "@/app/types/drizzleTypes";
+import { JewelryItemType } from "@/app/types/jewelryItemType";
 import { FC, useState } from "react";
 import CatalogCard from "./catalogcard";
 import SearchBar from "./searchbar";
@@ -7,12 +7,12 @@ import AddJewelryForm from "../addJewelryComponents/addJewelryForm";
 import { addJewelryItem } from "@/lib/dbutils";
 
 interface Props {
-  jewelryList: SelectJewelryItem[];
+  jewelryList: JewelryItemType[];
 }
 
 const CatalogGallery: FC<Props> = ({ jewelryList }) => {
   const [jewelryItemList, setJewelryItemList] =
-    useState<SelectJewelryItem[]>(jewelryList);
+    useState<JewelryItemType[]>(jewelryList);
 
   const createJewelryItem = (
     itemName: string,
@@ -25,7 +25,7 @@ const CatalogGallery: FC<Props> = ({ jewelryList }) => {
   ) => {
     const nextId = (jewelryItemList.at(-1)?.id || 0) + 1;
 
-    const newItem: SelectJewelryItem = {
+    const newItem: JewelryItemType = {
       id: nextId,
       userid: 999,
       name: itemName,
