@@ -1,6 +1,6 @@
 "use client";
 import { SelectJewelryItem } from "@/app/types/drizzleTypes";
-import { FC, useState } from "react";
+import { FC } from "react";
 import CatalogCard from "./catalogcard";
 
 interface Props {
@@ -8,8 +8,8 @@ interface Props {
 }
 
 const CatalogGallery: FC<Props> = ({ jewelryList }) => {
-  const [jewelryItemList, setJewelryItemList] =
-    useState<SelectJewelryItem[]>(jewelryList);
+  // const [jewelryItemList, setJewelryItemList] =
+  //   useState<SelectJewelryItem[]>(jewelryList);
 
   const createJewelryItem = () => {
     console.log("create jewelry item");
