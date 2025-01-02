@@ -1,36 +1,52 @@
 "use client";
 import { SelectJewelryItem } from "@/app/types/drizzleTypes";
-import { FC } from "react";
+import { FC, useState } from "react";
 import CatalogCard from "./catalogcard";
+import SearchBar from "./searchbar";
+import AddJewelryForm from "../addJewelryComponents/addJewelryForm";
+import { JewelryItemType } from "@/app/types/jewelryItemType";
 
 interface Props {
   jewelryList: SelectJewelryItem[];
 }
 
 const CatalogGallery: FC<Props> = ({ jewelryList }) => {
-  // const [jewelryItemList, setJewelryItemList] =
-  //   useState<SelectJewelryItem[]>(jewelryList);
+  const [jewelryItemList, setJewelryItemList] =
+    useState<SelectJewelryItem[]>(jewelryList);
 
-  const createJewelryItem = () => {
-    console.log("create jewelry item");
+  const createJewelryItem = (
+    itemName: "New Item",
+    brand = "",
+    type = "",
+    material = "",
+    color = "",
+    notes = "",
+    image = ""
+  ) => {
+    const nextId = (jewelryItemList.at(-1)?.id || 0) + 1;
+    
+    const newItem: SelectJewelryItem = {
+      id: nextId,
+      userid: 999,
+      name: itemName,
+      brand: brand,
+      type: type,
+      material: material,
+      color: color,
+      notes: notes,
+      imageUrl: image,
+    };
+    // dbutil function to add new item
+    console.log("adding new jewelry data to db...", newItem);
+
+    setJewelryItemList((prev) => [...prev, newItem]);
   };
 
   return (
     <div>
-      <div className="flex flex-row items-center justify-between mb-3 ">
-        <input
-          type="search"
-          name=""
-          id=""
-          placeholder="Search jewelry catalog"
-          className="bg-slate-100 w-1/2 rounded-2xl px-3 py-2 my-2 outline-none"
-        />
-        <button
-          onClick={createJewelryItem}
-          className="w-auto bg-pink-500 px-3 py-1 rounded-md text-white text-xl m-2 hover:scale-105 hover:bg-pink-600 hover:duration-300"
-        >
-          Add New Jewelry
-        </button>
+      <div className="flex flex-col items-center justify-center mb-3 ">
+        <SearchBar />
+        <AddJewelryForm createJewelryItem={createJewelryItem} />
       </div>
 
       {/* Gallery of jewelry items */}

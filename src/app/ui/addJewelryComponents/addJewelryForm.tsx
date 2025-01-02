@@ -3,18 +3,31 @@ import { FC, useState, ChangeEvent } from "react";
 import FormInput from "./formInput";
 import Link from "next/link";
 
-const AddJewelryForm: FC = () => {
-  const [itemName, setItemName] = useState<string>();
-  const [brand, setBrand] = useState<string>();
-  const [type, setType] = useState<string>();
-  const [material, setMaterial] = useState<string>();
-  const [color, setColor] = useState<string>();
-  const [notes, setNotes] = useState<string>();
-  const [image, setImage] = useState<string>();
+interface Props {
+  createJewelryItem: (
+    itemName: string,
+    brand: string,
+    type: string,
+    material: string,
+    color: string,
+    notes: string,
+    image: string
+  ) => void;
+}
+
+const AddJewelryForm: FC<Props> = ({ createJewelryItem }) => {
+  const [itemName, setItemName] = useState<string>("");
+  const [brand, setBrand] = useState<string>("");
+  const [type, setType] = useState<string>("");
+  const [material, setMaterial] = useState<string>("");
+  const [color, setColor] = useState<string>("");
+  const [notes, setNotes] = useState<string>("");
+  const [image, setImage] = useState<string>("");
 
   const handleItemNameInput = (e: ChangeEvent<HTMLInputElement>) => {
     setItemName(e.target.value);
   };
+
   const handleBrandInput = (e: ChangeEvent<HTMLInputElement>) => {
     setBrand(e.target.value);
   };
@@ -24,18 +37,22 @@ const AddJewelryForm: FC = () => {
   const handleMaterialInput = (e: ChangeEvent<HTMLInputElement>) => {
     setMaterial(e.target.value);
   };
+
   const handleColorInput = (e: ChangeEvent<HTMLInputElement>) => {
     setColor(e.target.value);
   };
+
   const handleNotesInput = (e: ChangeEvent<HTMLInputElement>) => {
     setNotes(e.target.value);
   };
+
   const handleImageInput = (e: ChangeEvent<HTMLInputElement>) => {
     setImage(e.target.value);
   };
-  
+
   const handleSave = () => {
     console.log(itemName, brand, type, material, color, notes, image);
+    createJewelryItem(itemName, brand, type, material, color, notes, image);
   };
 
   return (
