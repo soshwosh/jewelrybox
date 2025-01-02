@@ -1,7 +1,8 @@
-import {config} from 'dotenv'
-import { defineConfig } from 'drizzle-kit';
+import { config } from "dotenv";
+import { defineConfig } from "drizzle-kit";
+// import './drizzle/envConfig';
 
-config({path: '.env'})
+config({ path: ".env" });
 
 export default defineConfig({
   dialect: "postgresql",

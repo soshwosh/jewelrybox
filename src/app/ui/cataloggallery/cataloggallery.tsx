@@ -4,7 +4,7 @@ import { FC, useState } from "react";
 import CatalogCard from "./catalogcard";
 import SearchBar from "./searchbar";
 import AddJewelryForm from "../addJewelryComponents/addJewelryForm";
-import { JewelryItemType } from "@/app/types/jewelryItemType";
+import { addJewelryItem } from "@/lib/dbutils";
 
 interface Props {
   jewelryList: SelectJewelryItem[];
@@ -15,16 +15,16 @@ const CatalogGallery: FC<Props> = ({ jewelryList }) => {
     useState<SelectJewelryItem[]>(jewelryList);
 
   const createJewelryItem = (
-    itemName: "New Item",
-    brand = "",
-    type = "",
-    material = "",
-    color = "",
-    notes = "",
-    image = ""
+    itemName: string,
+    brand: string,
+    type: string,
+    material: string,
+    color: string,
+    notes: string,
+    image: string
   ) => {
     const nextId = (jewelryItemList.at(-1)?.id || 0) + 1;
-    
+
     const newItem: SelectJewelryItem = {
       id: nextId,
       userid: 999,
@@ -38,7 +38,19 @@ const CatalogGallery: FC<Props> = ({ jewelryList }) => {
     };
     // dbutil function to add new item
     console.log("adding new jewelry data to db...", newItem);
+    const data = addJewelryItem(
+      newItem.id,
+      newItem.userid,
+      newItem.name,
+      newItem.brand,
+      newItem.type,
+      newItem.material,
+      newItem.color,
+      newItem.notes,
+      newItem.imageUrl
+    );
 
+    console.log("data", data);
     setJewelryItemList((prev) => [...prev, newItem]);
   };
 

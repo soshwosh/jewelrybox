@@ -1,5 +1,6 @@
 import { sql } from "@vercel/postgres";
 import { SelectJewelryItem } from "../app/types/drizzleTypes";
+// import "../../drizzle/envConfig";
 
 export async function fetchAllJewelryItems() {
   try {
@@ -76,24 +77,26 @@ export async function fetchRingData() {
   }
 }
 
-// export async function addJewelryItem(
-//   name: string,
-//   brand: string,
-//   type: string,
-//   material: string,
-//   color: string,
-//   notes: string,
-//   imageUrl: string
-// ) {
-//   try {
-//     const data = await sql<SelectJewelryItem>`
-//         INSERT INTO jewelry_items (name, brand, type, material, color, notes, imageUrl)
-//         VALUES (${name}, ${brand}, ${type}, ${material}, ${color}, ${notes}, ${imageUrl})
-//         RETURNING *`;
+export async function addJewelryItem(
+  id: number,
+  userid: number,
+  name: string,
+  brand: string,
+  type: string,
+  material: string,
+  color: string,
+  notes: string,
+  imageUrl: string
+) {
+  try {
+    const data = await sql`
+        INSERT INTO jewelry_items (id, userid, name, brand, type, material, color, notes, imageUrl)
+        VALUES (${id}, ${userid}, ${name}, ${brand}, ${type}, ${material}, ${color}, ${notes}, ${imageUrl})
+        RETURNING *`;
 
-//     return data.rows;
-//   } catch (e) {
-//     console.error("Database Error: ", e);
-//     throw new Error("Failed to add jewelry item.");
-//   }
-// }
+    return data.rows;
+  } catch (e) {
+    console.error("Database Error: ", e);
+    throw new Error("Failed to add jewelry item.");
+  }
+}
