@@ -19,28 +19,20 @@ const AddJewelryFormSchema = z.object({
 const CreateJewelryItem = AddJewelryFormSchema.omit({
   id: true,
   userid: true,
-  type: true,
-  material: true,
-  color: true,
-  brand: true,
-  notes: true,
-  imageUrl: true,
 });
 
 export async function createJewelryItem(formData: FormData) {
-  //   const rawFormData = {
-  //     name: formData.get("itemName"),
-  //   };
-  const { name } = CreateJewelryItem.parse({
-    name: formData.get("itemName"),
-  });
+  const { name, brand, type, material, color, notes, imageUrl } =
+    CreateJewelryItem.parse({
+      name: formData.get("itemName"),
+      brand: formData.get("brand"),
+      type: formData.get("type"),
+      material: formData.get("material"),
+      color: formData.get("color"),
+      notes: formData.get("notes"),
+      imageUrl: formData.get("image"),
+    });
   const userid = 1;
-  const type = "testType";
-  const material = "testMaterial";
-  const color = "testColor";
-  const brand = "testBrand";
-  const notes = "testNotes";
-  const imageUrl = "testImage";
 
   await sql`
     INSERT INTO jewelry_items(userid, name, type, material, color, brand, notes, "imageUrl")
