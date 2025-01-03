@@ -1,22 +1,22 @@
 import CatalogGallery from "@/app/ui/cataloggallery/cataloggallery";
-import { fetchAllJewelryItems, addJewelryItem } from "@/lib/dbutils";
+import { fetchAllJewelryItems } from "@/lib/dbutils";
 import SearchBar from "../ui/cataloggallery/searchbar";
 // import {AddJewelryForm} from "@/app/ui/addjewelryform/addjewelryform";
 
 export default async function Page() {
   const jewelryData = await fetchAllJewelryItems();
 
-  const newData = await addJewelryItem(
-    999,
-    999,
-    "organized chaos choker",
-    "necklace",
-    "gold",
-    "multcolor",
-    "",
-    "",
-    "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-  );
+  // const newData = await addJewelryItem(
+  //   999,
+  //   999,
+  //   "organized chaos choker",
+  //   "necklace",
+  //   "gold",
+  //   "multcolor",
+  //   "",
+  //   "",
+  //   "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+  // );
 
   // const dummyData = [
   //   {
@@ -51,7 +51,7 @@ export default async function Page() {
         <SearchBar />
         {/* <AddJewelryForm createJewelryItem={createJewelryItem} /> */}
       </div>
-      <button onClick={console.log(newData)!}>Add Test</button>
+      {/* <button onClick={console.log(newData)!}>Add Test</button> */}
       <CatalogGallery jewelryList={jewelryData} />
     </div>
   );

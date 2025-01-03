@@ -76,32 +76,32 @@ export async function fetchRingData() {
   }
 }
 
-export async function addJewelryItem(
-  id: number,
-  userid: number,
-  name: string,
-  brand: string,
-  type: string,
-  material: string,
-  color: string,
-  notes: string,
-  imageUrl: string
-) {
-  try {
-    // const data = await sql`
-    //     INSERT INTO jewelry_items (id, userid, name, brand, type, material, color, notes)
-    //     VALUES (${id}, ${userid}, ${name}, ${brand}, ${type}, ${material}, ${color}, ${notes})
-    //     RETURNING *`;
-    const data = await sql<JewelryItemType>`
-        SELECT * 
-        FROM jewelry_items
-        WHERE jewelry_items.type = 'ring'
-        ORDER BY jewelry_items.id
-        LIMIT 1`;
+// export async function addJewelryItem(
+//   id: number,
+//   userid: number,
+//   name: string,
+//   brand: string,
+//   type: string,
+//   material: string,
+//   color: string,
+//   notes: string,
+//   imageUrl: string
+// ) {
+//   try {
+//     // const data = await sql`
+//     //     INSERT INTO jewelry_items (id, userid, name, brand, type, material, color, notes)
+//     //     VALUES (${id}, ${userid}, ${name}, ${brand}, ${type}, ${material}, ${color}, ${notes})
+//     //     RETURNING *`;
+//     const data = await sql<JewelryItemType>`
+//         SELECT * 
+//         FROM jewelry_items
+//         WHERE jewelry_items.type = 'ring'
+//         ORDER BY jewelry_items.id
+//         LIMIT 1`;
 
-    return data.rows;
-  } catch (e) {
-    console.error("Database Error: ", e);
-    throw new Error("Failed to add jewelry item.");
-  }
-}
+//     return data.rows;
+//   } catch (e) {
+//     console.error("Database Error: ", e);
+//     throw new Error("Failed to add jewelry item.");
+//   }
+// }
