@@ -2,7 +2,7 @@ This is JewelryBox, a full stack personal jewelry catalog with organizational ab
 
 ## Major Features / MVP
 
-- [ ] Add jewelry items
+- [x] Add jewelry items
 - Input details such as name, brand, material, notes, etc
 - Optionally upload an image of the item
 - [x] View jewelry items
