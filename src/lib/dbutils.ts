@@ -1,6 +1,5 @@
 import { sql } from "@vercel/postgres";
 import { JewelryItemType } from "../app/types/jewelryItemType";
-// import "../../drizzle/envConfig";
 
 export async function fetchAllJewelryItems() {
   try {
@@ -89,10 +88,16 @@ export async function addJewelryItem(
   imageUrl: string
 ) {
   try {
-    const data = await sql`
-        INSERT INTO jewelry_items (id, userid, name, brand, type, material, color, notes, imageUrl)
-        VALUES (${id}, ${userid}, ${name}, ${brand}, ${type}, ${material}, ${color}, ${notes}, ${imageUrl})
-        RETURNING *`;
+    // const data = await sql`
+    //     INSERT INTO jewelry_items (id, userid, name, brand, type, material, color, notes)
+    //     VALUES (${id}, ${userid}, ${name}, ${brand}, ${type}, ${material}, ${color}, ${notes})
+    //     RETURNING *`;
+    const data = await sql<JewelryItemType>`
+        SELECT * 
+        FROM jewelry_items
+        WHERE jewelry_items.type = 'ring'
+        ORDER BY jewelry_items.id
+        LIMIT 1`;
 
     return data.rows;
   } catch (e) {
