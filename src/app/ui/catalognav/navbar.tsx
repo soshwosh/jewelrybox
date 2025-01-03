@@ -27,10 +27,6 @@ const links = [
     name: "Rings",
     href: "/alljewelry/rings",
   },
-  {
-    name: "Add New Jewelry",
-    href: "/alljewelry/addJewelry",
-  },
 ];
 
 export default function NavBar() {

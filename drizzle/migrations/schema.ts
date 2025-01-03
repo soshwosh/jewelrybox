@@ -18,14 +18,14 @@ export const jewelryItems = pgTable(
   "jewelry_items",
   {
     id: serial().primaryKey().notNull(),
-    userid: integer(),
-    name: varchar({ length: 30 }),
-    type: varchar({ length: 10 }).notNull(),
-    material: varchar({ length: 30 }),
-    color: varchar({ length: 10 }),
-    brand: varchar({ length: 30 }),
-    notes: text(),
-    imageUrl: text("image_url"),
+    userid: integer().notNull(),
+    name: varchar({ length: 30 }).default(""),
+    type: varchar({ length: 10 }).default("earrings"),
+    material: varchar({ length: 30 }).default(""),
+    color: varchar({ length: 10 }).default(""),
+    brand: varchar({ length: 30 }).default(""),
+    notes: text().default(""),
+    imageUrl: text().default(""),
   },
   (table) => [
     foreignKey({
