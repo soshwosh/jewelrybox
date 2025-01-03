@@ -24,7 +24,7 @@ export const jewelryItems = pgTable(
     color: varchar({ length: 10 }).default(""),
     brand: varchar({ length: 30 }).default(""),
     notes: text().default(""),
-    imageUrl: text("imageUrl").default(""),
+    imageUrl: text().default(""),
   },
   (table) => [
     foreignKey({
