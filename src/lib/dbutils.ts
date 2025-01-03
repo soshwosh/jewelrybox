@@ -1,9 +1,9 @@
 import { sql } from "@vercel/postgres";
-import { SelectJewelryItem } from "../app/types/drizzleTypes";
+import { JewelryItemType } from "../app/types/jewelryItemType";
 
 export async function fetchAllJewelryItems() {
   try {
-    const data = await sql<SelectJewelryItem>`
+    const data = await sql<JewelryItemType>`
         SELECT * 
         FROM jewelry_items
         ORDER BY jewelry_items.id
@@ -18,7 +18,7 @@ export async function fetchAllJewelryItems() {
 
 export async function fetchBraceletData() {
   try {
-    const data = await sql<SelectJewelryItem>`
+    const data = await sql<JewelryItemType>`
         SELECT * 
         FROM jewelry_items
         WHERE jewelry_items.type = 'bracelet'
@@ -33,7 +33,7 @@ export async function fetchBraceletData() {
 
 export async function fetchEarringData() {
   try {
-    const data = await sql<SelectJewelryItem>`
+    const data = await sql<JewelryItemType>`
         SELECT * 
         FROM jewelry_items
         WHERE jewelry_items.type = 'earrings'
@@ -48,7 +48,7 @@ export async function fetchEarringData() {
 
 export async function fetchNecklaceData() {
   try {
-    const data = await sql<SelectJewelryItem>`
+    const data = await sql<JewelryItemType>`
         SELECT * 
         FROM jewelry_items
         WHERE jewelry_items.type = 'necklace'
@@ -63,7 +63,7 @@ export async function fetchNecklaceData() {
 
 export async function fetchRingData() {
   try {
-    const data = await sql<SelectJewelryItem>`
+    const data = await sql<JewelryItemType>`
         SELECT * 
         FROM jewelry_items
         WHERE jewelry_items.type = 'ring'
@@ -75,25 +75,3 @@ export async function fetchRingData() {
     throw new Error("Failed to fetch bracelet data.");
   }
 }
-
-// export async function addJewelryItem(
-//   name: string,
-//   brand: string,
-//   type: string,
-//   material: string,
-//   color: string,
-//   notes: string,
-//   imageUrl: string
-// ) {
-//   try {
-//     const data = await sql<SelectJewelryItem>`
-//         INSERT INTO jewelry_items (name, brand, type, material, color, notes, imageUrl)
-//         VALUES (${name}, ${brand}, ${type}, ${material}, ${color}, ${notes}, ${imageUrl})
-//         RETURNING *`;
-
-//     return data.rows;
-//   } catch (e) {
-//     console.error("Database Error: ", e);
-//     throw new Error("Failed to add jewelry item.");
-//   }
-// }

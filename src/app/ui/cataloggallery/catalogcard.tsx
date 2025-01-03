@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { SelectJewelryItem } from "@/app/types/drizzleTypes";
+import { JewelryItemType } from "@/app/types/jewelryItemType";
 
 interface Props {
-  jewelry: SelectJewelryItem;
+  jewelry: JewelryItemType;
   // add some state handlers like changeNameText, changeTypeText, etc
 }
 

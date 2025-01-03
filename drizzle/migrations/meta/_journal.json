@@ -22,6 +22,20 @@
       "when": 1735759244804,
       "tag": "0002_flat_sleeper",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1735847087889,
+      "tag": "0003_nostalgic_sunfire",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1735853322616,
+      "tag": "0004_cheerful_polaris",
+      "breakpoints": true
     }
   ]
 }

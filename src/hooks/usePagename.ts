@@ -17,6 +17,8 @@ const usePagename = () => {
     return "Rings";
   } else if (pathname === "/alljewelry/addJewelry") {
     return "Add Jewelry";
+  } else if (pathname === "/alljewelry/create") {
+    return "Add a New Jewelry Item";
   } else {
     return "";
   }
