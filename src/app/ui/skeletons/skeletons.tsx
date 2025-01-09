@@ -1,4 +1,4 @@
-const shimmer = "";
+// const shimmer = "";
 
 export function CatalogCardSkeleton() {
   return (
