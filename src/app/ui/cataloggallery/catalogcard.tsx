@@ -1,8 +1,9 @@
 import { FC } from "react";
-import { JewelryItemType } from "@/app/types/jewelryItemType";
+// import { JewelryItemType } from "@/app/types/jewelryItemType";
+import { QueryResultRow } from "@vercel/postgres";
 
 interface Props {
-  jewelry: JewelryItemType;
+  jewelry: QueryResultRow;
   // add some state handlers like changeNameText, changeTypeText, etc
 }
 

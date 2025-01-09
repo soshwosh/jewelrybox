@@ -1,12 +1,15 @@
-import { FC } from "react";
+import { JewelryItemType } from "@/app/types/drizzleTypes";
 import CatalogCard from "./catalogcard";
-import { fetchAllJewelryItems } from "@/lib/dbutils";
+import { fetchAllJewelryItems, fetchFilteredData } from "@/lib/dbutils";
 
-const CatalogGallery: FC = async () => {
+export default async function CatalogGallery({query} : {query: string}) {
+
   // if there is no query in the URL, fetch all jewelry items
   // if there is a query, fetch filtered jewelry items
-
-  const jewelryData = await fetchAllJewelryItems();
+  const jewelryData =
+    query && query !== ""
+      ? await fetchFilteredData(query)
+      : await fetchAllJewelryItems();
 
   return (
     <div className="w-full">
@@ -23,6 +26,4 @@ const CatalogGallery: FC = async () => {
       </div>
     </div>
   );
-};
-
-export default CatalogGallery;
+}
