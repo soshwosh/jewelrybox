@@ -4,8 +4,8 @@ import FormInput from "@/app/ui/addJewelryComponents/formInput";
 
 export default async function Page() {
   return (
-    <div className="">
-      <form action={createJewelryItem} className="flex flex-col w-full">
+    <div className="flex justify-center items-center">
+      <form action={createJewelryItem} className="flex flex-col w-full md:w-1/2">
         <FormInput
           inputName="itemName"
           itemTitle="Item Name"
