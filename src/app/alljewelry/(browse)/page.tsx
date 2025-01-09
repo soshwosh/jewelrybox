@@ -1,12 +1,11 @@
 import CatalogGallery from "@/app/ui/cataloggallery/cataloggallery";
-import { fetchAllJewelryItems } from "@/lib/dbutils";
+import SearchBar from "@/app/ui/cataloggallery/searchbar";
 
 export default async function Page() {
-  const jewelryData = await fetchAllJewelryItems();
-
   return (
     <div>
-      <CatalogGallery jewelryList={jewelryData} />
+      <SearchBar placeholder="Search entire jewelry collection" />
+      <CatalogGallery />
     </div>
   );
 }

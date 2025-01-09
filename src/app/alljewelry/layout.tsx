@@ -5,6 +5,7 @@ import SearchBar from "../ui/cataloggallery/searchbar";
 import usePagename from "../../hooks/usePagename";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import AddJewelryButton from "../ui/addJewelryComponents/addJewelryBtn";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const pageName = usePagename();
@@ -19,15 +20,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="flex flex-col items-center w-full">
         <Header pageTitle={pageName} />
 
-        {pathname !== "/alljewelry/create" && (
+        {/* {pathname !== "/alljewelry/create" && (
           <div className="flex flex-col justify-center items-center m-4 w-full md:flex-row md:w-1/2">
             <SearchBar />
 
-            <button className="w-auto text-nowrap bg-pink-500 px-3 py-1 rounded-md text-white text-xl m-2 hover:scale-105 hover:bg-pink-700 hover:duration-300">
-              <Link href={"/alljewelry/create"}>Add Jewelry</Link>
-            </button>
+            <AddJewelryButton/>
           </div>
-        )}
+        )} */}
 
         <div className="flex-grow w-full p-6 md:overflow-y-auto md:p-8">
           {children}

@@ -1,18 +1,18 @@
-"use client";
-import { JewelryItemType } from "@/app/types/jewelryItemType";
 import { FC } from "react";
 import CatalogCard from "./catalogcard";
+import { fetchAllJewelryItems } from "@/lib/dbutils";
 
-interface Props {
-  jewelryList: JewelryItemType[];
-}
+const CatalogGallery: FC = async () => {
+  // if there is no query in the URL, fetch all jewelry items
+  // if there is a query, fetch filtered jewelry items
 
-const CatalogGallery: FC<Props> = ({ jewelryList }) => {
+  const jewelryData = await fetchAllJewelryItems();
+
   return (
     <div className="w-full">
       {/* Gallery of jewelry items */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {jewelryList.map((jewelryItem) => {
+        {jewelryData.map((jewelryItem) => {
           return (
             <CatalogCard
               key={jewelryItem.id}
