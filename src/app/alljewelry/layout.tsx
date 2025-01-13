@@ -1,10 +1,11 @@
-"use client";
+// "use client";
 import NavBar from "../ui/catalognav/navbar";
 import Header from "../ui/catalogheader/header";
-import usePagename from "../../hooks/usePagename";
+// import usePagename from "../../hooks/usePagename";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const pageName = usePagename();
+  // const pageName = usePagename();
+  const pageName= "PLACEHOLDER"
 
   return (
     <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">

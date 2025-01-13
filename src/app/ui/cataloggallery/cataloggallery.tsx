@@ -1,4 +1,3 @@
-// import { JewelryItemType } from "@/app/types/drizzleTypes";
 import { JewelryItemType } from "@/app/types/jewelryItemType";
 import CatalogCard from "./catalogcard";
 import { fetchFilteredData } from "@/lib/dbutils";
@@ -12,8 +11,7 @@ export default async function CatalogGallery({
   query,
   defaultFetchData,
 }: Props) {
-  // if there is no query in the URL, fetch all jewelry items
-  // if there is a query, fetch filtered jewelry items
+  
   const jewelryData: JewelryItemType[] =
     query && query !== ""
       ? await fetchFilteredData(query)
