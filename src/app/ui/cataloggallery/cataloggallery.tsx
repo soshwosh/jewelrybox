@@ -1,11 +1,11 @@
 // import { JewelryItemType } from "@/app/types/drizzleTypes";
+import { JewelryItemType } from "@/app/types/jewelryItemType";
 import CatalogCard from "./catalogcard";
 import { fetchFilteredData } from "@/lib/dbutils";
-import { QueryResultRow } from "pg";
 
 interface Props {
   query: string;
-  defaultFetchData: () => QueryResultRow[];
+  defaultFetchData: () => Promise<JewelryItemType[]>;
 }
 
 export default async function CatalogGallery({
@@ -14,7 +14,7 @@ export default async function CatalogGallery({
 }: Props) {
   // if there is no query in the URL, fetch all jewelry items
   // if there is a query, fetch filtered jewelry items
-  const jewelryData =
+  const jewelryData: JewelryItemType[] =
     query && query !== ""
       ? await fetchFilteredData(query)
       : await defaultFetchData();
@@ -23,7 +23,7 @@ export default async function CatalogGallery({
     <div className="w-full">
       {/* Gallery of jewelry items */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {jewelryData.map((jewelryItem: QueryResultRow) => {
+        {jewelryData.map((jewelryItem: JewelryItemType) => {
           return (
             <CatalogCard
               key={jewelryItem.id}

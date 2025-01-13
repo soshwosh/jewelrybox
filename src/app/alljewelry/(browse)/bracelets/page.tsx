@@ -13,7 +13,7 @@ export default async function Page(props: {
 
   return (
     <div>
-      <SearchBar placeholder="Search entire jewelry collection" />
+      <SearchBar placeholder="Search bracelets" />
       <CatalogGallery query={query} defaultFetchData={fetchBraceletData} />
     </div>
   );

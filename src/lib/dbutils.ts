@@ -78,7 +78,7 @@ export async function fetchRingData() {
 
 export async function fetchFilteredData(query: string) {
   try {
-    const jewelry = await sql`
+    const jewelry = await sql<JewelryItemType>`
       SELECT *
       FROM jewelry_items
       WHERE 
