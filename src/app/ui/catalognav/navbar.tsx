@@ -1,4 +1,4 @@
-import AddJewelryButton from "../addJewelryComponents/addJewelryBtn";
+import AddJewelryButton from "../forms/addJewelryBtn";
 import NavLinks from "./navlinks";
 
 // TODO: Store in database and fetch
