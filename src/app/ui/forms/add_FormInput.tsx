@@ -7,7 +7,7 @@ interface Props {
 }
 
 // TODO: add prop "required" and conditionally render input element with "required"
-const FormInput: FC<Props> = ({ inputName, itemTitle, placeholder }) => {
+const AddFormInput: FC<Props> = ({ inputName, itemTitle, placeholder }) => {
   return (
     <div className="flex flex-col mb-3">
       <label className="text-md" htmlFor={inputName}>
@@ -24,4 +24,4 @@ const FormInput: FC<Props> = ({ inputName, itemTitle, placeholder }) => {
   );
 };
 
-export default FormInput;
+export default AddFormInput;

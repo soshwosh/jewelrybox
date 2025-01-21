@@ -1,52 +1,55 @@
 import { createJewelryItem } from "@/lib/actions";
 import Link from "next/link";
-import FormInput from "@/app/ui/addJewelryComponents/formInput";
+import AddFormInput from "@/app/ui/forms/add_FormInput";
 
 export default async function Page() {
   return (
     <div className="flex justify-center items-center">
-      <form action={createJewelryItem} className="flex flex-col w-full md:w-1/2">
-        <FormInput
+      <form
+        action={createJewelryItem}
+        className="flex flex-col w-full md:w-1/2"
+      >
+        <AddFormInput
           inputName="itemName"
           itemTitle="Item Name"
           placeholder="Bean Bracelet"
-        ></FormInput>
-        <FormInput
+        ></AddFormInput>
+        <AddFormInput
           inputName="brand"
           itemTitle="Brand"
           placeholder="Tiffany & Co"
-        ></FormInput>
-        <FormInput
+        ></AddFormInput>
+        <AddFormInput
           inputName="type"
           itemTitle="Jewelry Type"
           placeholder="bracelet"
-        ></FormInput>
-        <FormInput
+        ></AddFormInput>
+        <AddFormInput
           inputName="material"
           itemTitle="Material"
           placeholder="gold"
-        ></FormInput>
-        <FormInput
+        ></AddFormInput>
+        <AddFormInput
           inputName="color"
           itemTitle="Color"
           placeholder="yellow"
-        ></FormInput>
-        <FormInput
+        ></AddFormInput>
+        <AddFormInput
           inputName="notes"
           itemTitle="Notes"
           placeholder="grad present from grandma"
-        ></FormInput>
-        <FormInput
+        ></AddFormInput>
+        <AddFormInput
           inputName="image"
           itemTitle="Image URL"
           placeholder="https://media.tiffany.com/is/image/Tiffany/EcomItemL2/elsa-perettibean-design-bracelet-34900965_1041295_AV_2.jpg?&op_usm=1.0,1.0,6.0&defaultImage=NoImageAvailableInternal&&defaultImage=NoImageAvailableInternal&fmt=webp"
-        ></FormInput>
+        ></AddFormInput>
 
         <div className="flex flex-row justify-around">
           <button className="w-auto bg-pink-500 px-3 py-1 rounded-md text-white text-xl m-2 hover:scale-105 hover:bg-pink-700 hover:duration-300">
             <Link href="/alljewelry">Cancel</Link>
           </button>
-          <button className="w-auto bg-pink-500 px-3 py-1 rounded-md text-white text-xl m-2 hover:scale-105 hover:bg-pink-700 hover:duration-300">
+          <button type="submit" className="w-auto bg-pink-500 px-3 py-1 rounded-md text-white text-xl m-2 hover:scale-105 hover:bg-pink-700 hover:duration-300">
             Save
           </button>
         </div>

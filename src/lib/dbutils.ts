@@ -16,6 +16,20 @@ export async function fetchAllJewelryItems() {
   }
 }
 
+export async function fetchJewelryItemById(id: number) {
+  try {
+    const data = await sql<JewelryItemType>`
+        SELECT * 
+        FROM jewelry_items
+        WHERE jewelry_items.id = ${id}`;
+
+    return data.rows[0];
+  } catch (e) {
+    console.error("Database Error: ", e);
+    throw new Error(`Failed to fetch jewelry item data with id: ${id}.`);
+  }
+}
+
 export async function fetchBraceletData() {
   try {
     const data = await sql<JewelryItemType>`

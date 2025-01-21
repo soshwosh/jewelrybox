@@ -7,7 +7,7 @@ This is JewelryBox, a full stack personal jewelry catalog with organizational ab
 - Optionally upload an image of the item
 - [x] View jewelry items
 - Display all jewelry in a visually appealing gallery
-- [ ] Search jewelry items
+- [x] Search jewelry items
 - Search catalog by type, material, or tags
 - [ ] Edit jewelry items
 - Modify details about jewelry in case of error when adding, or change to the state of the jewelry
@@ -21,10 +21,6 @@ This is JewelryBox, a full stack personal jewelry catalog with organizational ab
 - Backend: NextJS & NodeJS
 - Database: Postgres (NeonDB, Drizzle ORM)
 - Deployment: Vercel
-
-When you click login or signup, it's takes a few seconds to load.
-I think this is because my initial database fetches are slow and I haven't implemented any streaming (yet).
-You can try to just add "/alljewelry" to the URL, it sometimes loads faster than the button clicks for me.
 
 ## Getting Started
 

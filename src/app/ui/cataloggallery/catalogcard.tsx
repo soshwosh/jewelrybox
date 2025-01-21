@@ -1,14 +1,13 @@
 import { FC } from "react";
-// import { JewelryItemType } from "@/app/types/jewelryItemType";
 import { QueryResultRow } from "@vercel/postgres";
+import Link from "next/link";
+import ModeIcon from "@mui/icons-material/Mode";
 
 interface Props {
   jewelry: QueryResultRow;
-  // add some state handlers like changeNameText, changeTypeText, etc
 }
 
 const CatalogCard: FC<Props> = ({ jewelry }) => {
-  // console.log(jewelry.name, jewelry.imageUrl);
   return (
     // From https://v1.tailwindcss.com/components/cards#stacked
     <div className="max-w-sm rounded overflow-hidden shadow-lg hover:-translate-y-2 hover:duration-300">
@@ -26,6 +25,12 @@ const CatalogCard: FC<Props> = ({ jewelry }) => {
             alt="picture of jewelry"
           />
         )}
+        <Link
+          href={`/alljewelry/${jewelry.id}/edit`}
+          className="absolute top-0 right-0 px-2 py-1 m-2 bg-gray-400 text-white rounded-md hover:bg-yellow-500 hover:duration-300"
+        >
+          <ModeIcon className="w-5 h-5" />
+        </Link>
       </div>
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{jewelry.name}</div>
