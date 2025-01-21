@@ -3,6 +3,7 @@ import { usePathname } from "next/navigation";
 
 const usePagename = () => {
   const pathname = usePathname();
+  const editRegex = new RegExp("^/alljewelry/\\d+/edit$");
 
   if (pathname === "/") {
     return "Home";
@@ -20,8 +21,10 @@ const usePagename = () => {
     return "Add Jewelry";
   } else if (pathname === "/alljewelry/create") {
     return "Add a New Jewelry Item";
+  } else if (editRegex.test(pathname)) {
+    return "Update a Jewelry Item";
   } else {
-    return "";
+    return "Needs Header Title";
   }
 };
 
