@@ -75,3 +75,25 @@ export async function fetchRingData() {
     throw new Error("Failed to fetch bracelet data.");
   }
 }
+
+export async function fetchFilteredData(query: string) {
+  try {
+    const jewelry = await sql<JewelryItemType>`
+      SELECT *
+      FROM jewelry_items
+      WHERE 
+        jewelry_items.name ILIKE ${`%${query}%`} OR
+        jewelry_items.type ILIKE ${`%${query}%`} OR
+        jewelry_items.material ILIKE ${`%${query}%`} OR
+        jewelry_items.color ILIKE ${`%${query}%`} OR
+        jewelry_items.brand ILIKE ${`%${query}%`} OR
+        jewelry_items.notes ILIKE ${`%${query}%`};
+    `;
+
+    return jewelry.rows;
+  } catch (e) {
+    console.error("Database Error:", e);
+    throw new Error('Failed to fetch filtered jewelry data.')
+  }
+
+}

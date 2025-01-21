@@ -1,3 +1,4 @@
+import AddJewelryButton from "../addJewelryComponents/addJewelryBtn";
 import NavLinks from "./navlinks";
 
 // TODO: Store in database and fetch
@@ -33,6 +34,7 @@ export default function NavBar() {
   return (
     <div className="flex h-full flex-col p-3 bg-pink-500">
       <NavLinks links={links} />
+      <AddJewelryButton />
     </div>
   );
 }
