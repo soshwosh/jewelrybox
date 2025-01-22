@@ -9,7 +9,7 @@ This is JewelryBox, a full stack personal jewelry catalog with organizational ab
 - Display all jewelry in a visually appealing gallery
 - [x] Search jewelry items
 - Search catalog by type, material, or tags
-- [ ] Edit jewelry items
+- [x] Edit jewelry items
 - Modify details about jewelry in case of error when adding, or change to the state of the jewelry
 - [ ] Delete jewelry items
 - Remove an item from the catalog
