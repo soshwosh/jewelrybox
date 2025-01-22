@@ -69,3 +69,8 @@ export async function updateJewelryItem(id: string, formData: FormData) {
   revalidatePath("/alljewelry");
   redirect("/alljewelry");
 }
+
+export async function deleteJewelryItem(id: string) {
+  await sql`DELETE FROM jewelry_items WHERE id = ${id}`;
+  revalidatePath("/alljewelry");
+}

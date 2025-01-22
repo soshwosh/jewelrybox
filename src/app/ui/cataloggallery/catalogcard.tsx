@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { QueryResultRow } from "@vercel/postgres";
-import Link from "next/link";
 import EditJewelryButton from "../forms/editJewelryBtn";
+import DeleteJewelryButton from "../forms/deleteJewelryBtn";
 
 interface Props {
   jewelry: QueryResultRow;
@@ -26,6 +26,8 @@ const CatalogCard: FC<Props> = ({ jewelry }) => {
           />
         )}
         <EditJewelryButton id={jewelry.id}></EditJewelryButton>
+        <DeleteJewelryButton id={jewelry.id}></DeleteJewelryButton>
+
       </div>
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{jewelry.name}</div>
