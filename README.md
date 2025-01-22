@@ -11,7 +11,7 @@ This is JewelryBox, a full stack personal jewelry catalog with organizational ab
 - Search catalog by type, material, or tags
 - [x] Edit jewelry items
 - Modify details about jewelry in case of error when adding, or change to the state of the jewelry
-- [ ] Delete jewelry items
+- [x] Delete jewelry items
 - Remove an item from the catalog
 - [ ] Pair jewelry items
 - Pair up jewelry items for occasions or outfits
