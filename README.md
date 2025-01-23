@@ -15,8 +15,11 @@ This is JewelryBox, a full stack personal jewelry catalog with organizational ab
 - Remove an item from the catalog
 - [ ] Pair jewelry items
 - Pair up jewelry items for occasions or outfits
+- [ ] Accessibility
+- Basic accessibility features so that people with disabilities can interact seamlessly with the app.
 
 ## Tech Stack
+
 - Frontend: React & TailwindCSS
 - Backend: NextJS & NodeJS
 - Database: Postgres (NeonDB, Drizzle ORM)
