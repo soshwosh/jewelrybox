@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { QueryResultRow } from "@vercel/postgres";
-import Link from "next/link";
-import ModeIcon from "@mui/icons-material/Mode";
+import EditJewelryButton from "../forms/editJewelryBtn";
+import DeleteJewelryButton from "../forms/deleteJewelryBtn";
 
 interface Props {
   jewelry: QueryResultRow;
@@ -25,12 +25,9 @@ const CatalogCard: FC<Props> = ({ jewelry }) => {
             alt="picture of jewelry"
           />
         )}
-        <Link
-          href={`/alljewelry/${jewelry.id}/edit`}
-          className="absolute top-0 right-0 px-2 py-1 m-2 bg-gray-400 text-white rounded-md hover:bg-yellow-500 hover:duration-300"
-        >
-          <ModeIcon className="w-5 h-5" />
-        </Link>
+        <EditJewelryButton id={jewelry.id}></EditJewelryButton>
+        <DeleteJewelryButton id={jewelry.id}></DeleteJewelryButton>
+
       </div>
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{jewelry.name}</div>

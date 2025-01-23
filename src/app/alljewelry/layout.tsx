@@ -1,5 +1,5 @@
 "use client";
-import NavBar from "../ui/catalognav/navbar";
+import NavBar from "../ui/nav/navbar";
 import Header from "../ui/catalogheader/header";
 import usePagename from "../../hooks/usePagename";
 
